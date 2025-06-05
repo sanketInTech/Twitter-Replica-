@@ -18,12 +18,6 @@ This project serves as a showcase of full-stack development capabilities, focusi
 
 This project is a work-in-progress Twitter (now X) clone built using Next.js, aiming to replicate the look, feel, and core functionality of the X.com desktop experience.
 
-## Live Demo
-
-Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT_URL_HERE`
-
-*(Note: `http://localhost:3002/` is a local development address and is not accessible externally. Please replace `YOUR_DEPLOYMENT_URL_HERE` with the public URL after deploying your project to a hosting service like Vercel or Netlify.)*
-
 ## Features
 
 -   **Authentication:** Implemented using NextAuth.js with support for Credentials and Google providers.
@@ -99,6 +93,10 @@ Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT
 
     Open [http://localhost:3002/](http://localhost:3002/) in your browser to see the result.
 
+## Live Demo
+
+Once deployed, a live demo of the project will be available at: `DEPLOYMENT_URL_HERE`
+
 ## To Do / Potential Improvements
 
 -   Implement full backend for posts, users, and interactions (likes, retweets, replies).
@@ -107,6 +105,12 @@ Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT
 -   Add more features (user profiles, following/followers, search, trending topics).
 -   Refine responsive design and layout for various screen sizes.
 
+## Contacts
+
+- **GitHub:** https://github.com/sanketInTech
+- **LinkedIn:** https://www.linkedin.com/in/sanket-desai-/
+- **Twitter (X):** https://x.com/IAmSanket_21
+- **Email:** sanketdesai1971@gmail.com
+- 
 ## License
 
-[Specify your license here, e.g., MIT]
