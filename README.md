@@ -97,7 +97,7 @@ Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT
     # or pnpm dev
     ```
 
-    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+    Open [http://localhost:3002/](http://localhost:3002/) in your browser to see the result.
 
 ## To Do / Potential Improvements
 
