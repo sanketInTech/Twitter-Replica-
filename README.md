@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Twitter Clone (X Clone)
 
-## Getting Started
+This project is a work-in-progress Twitter (now X) clone built using Next.js, aiming to replicate the look, feel, and core functionality of the X.com desktop experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Authentication:** Implemented using NextAuth.js with support for Credentials and Google providers.
+-   **Responsive Layout:** A multi-column layout (Left Sidebar, Main Feed, Right Sidebar) that adapts to different screen sizes.
+-   **Static Left Sidebar:** The navigation sidebar remains fixed while the main content area scrolls.
+-   **Tweet Composer:** A functional area to compose new tweets with various media attachment options (Image, GIF, Poll, Emoji, Location).
+-   **Post Feed:** Displays sample posts with user information, timestamps, content, and interaction counts (likes, retweets, replies).
+-   **Styling:** Utilizes Tailwind CSS for rapid and responsive UI development, aiming for a look similar to X.com (dark mode, rounded elements, sticky headers).
+-   **Sample Data:** Uses local sample data for posts and users.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   Next.js (React Framework)
+-   TypeScript
+-   Tailwind CSS
+-   NextAuth.js
+-   React Icons (`react-icons`)
+-   Headless UI (for components like Modals - although currently commented out)
+-   MongoDB (Planned for database integration)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+-   `app/`: Contains the main application routing and layout.
+    -   `layout.tsx`: Defines the overall application layout (sidebars, main content).
+    -   `page.tsx`: The main home page component, including the tweet composer and post feed.
+    -   `api/auth/[...nextauth]/route.ts`: NextAuth.js configuration.
+    -   `components/`: Reusable UI components (Navigation, RightSidebar).
+    -   `data/`: Sample data files (`sampleData.ts`).
+    -   `lib/`: Utility functions or configurations (e.g., `mongodb.ts` for database connection).
+    -   `types/`: TypeScript type definitions.
+-   `public/`: Static assets.
+-   `styles/globals.css`: Global Tailwind CSS styles.
+-   `next.config.js`: Next.js configuration, including image domain allowlist.
 
-To learn more about Next.js, take a look at the following resources:
+## Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clone the repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    git clone [your repository URL]
+    cd [your repository name]
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    # or yarn install
+    # or pnpm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root directory and add your NextAuth.js configuration.
+
+    ```env
+    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_SECRET=YOUR_SECRET
+    # Google Provider Credentials (if using)
+    GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+    GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
+    # MongoDB Connection (if using)
+    MONGODB_URI=YOUR_MONGODB_URI
+    ```
+    _Replace placeholder values with your actual credentials._
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    # or yarn dev
+    # or pnpm dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## To Do / Potential Improvements
+
+-   Implement full backend for posts, users, and interactions (likes, retweets, replies).
+-   Integrate database (MongoDB is planned).
+-   Improve image handling, resolving external image loading issues.
+-   Add more features (user profiles, following/followers, search, trending topics).
+-   Refine responsive design and layout for various screen sizes.
+
+## License
+
+[Specify your license here, e.g., MIT]
