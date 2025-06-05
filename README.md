@@ -1,6 +1,28 @@
 # Twitter Clone (X Clone)
 
+![Twitter Clone Screenshot](https://firebasestorage.googleapis.com/v0/b/assistive-tools-prod.appspot.com/o/shared-assets%2Ftwitter-clone.png?alt=media&token=03f1c8d6-092e-4f29-921f-1448278427f3)
+
+## About
+
+Twitter-Replica is a modern web application that recreates the core functionality and user experience of Twitter (now X). Built with Next.js and TypeScript, this project demonstrates advanced frontend development skills, responsive design implementation, and modern web development practices.
+
+Key aspects of this project include:
+- Real-time tweet composition and display
+- User authentication and session management
+- Responsive multi-column layout design
+- Modern UI/UX implementation using Tailwind CSS
+- Integration with various media types (images, GIFs, polls)
+- Server-side rendering for optimal performance
+
+This project serves as a showcase of full-stack development capabilities, focusing on creating a seamless and engaging user experience while maintaining code quality and following best practices.
+
 This project is a work-in-progress Twitter (now X) clone built using Next.js, aiming to replicate the look, feel, and core functionality of the X.com desktop experience.
+
+## Live Demo
+
+Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT_URL_HERE`
+
+*(Note: `http://localhost:3002/` is a local development address and is not accessible externally. Please replace `YOUR_DEPLOYMENT_URL_HERE` with the public URL after deploying your project to a hosting service like Vercel or Netlify.)*
 
 ## Features
 
