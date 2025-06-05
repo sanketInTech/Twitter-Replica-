@@ -75,7 +75,7 @@ This project is a work-in-progress Twitter (now X) clone built using Next.js, ai
     # or pnpm dev
     ```
 
-    Open [http://localhost:3000](http://localhost:3002/) in your browser to see the result.
+    Open [http://localhost:3002/](http://localhost:3002/) in your browser to see the result.
 
 ## To Do / Potential Improvements
 
