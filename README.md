@@ -1,6 +1,6 @@
 # Twitter Clone (X Clone)
 
-![Twitter Clone Screenshot](https://firebasestorage.googleapis.com/v0/b/assistive-tools-prod.appspot.com/o/shared-assets%2Ftwitter-clone.png?alt=media&token=03f1c8d6-092e-4f29-921f-1448278427f3)
+![Twitter Clone](public/images/twitter-clone.png)
 
 ## About
 
