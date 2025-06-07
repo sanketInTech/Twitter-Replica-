@@ -3,10 +3,10 @@
 import { samplePosts } from './data/sampleData'
 import { Post } from './types'
 // import Image from 'next/image'
-import { FaRegComment, FaRetweet, FaRegHeart, FaRegChartBar, FaRegBookmark, FaShare } from 'react-icons/fa'
 import { BsImage, BsEmojiSmile, BsGeoAlt } from 'react-icons/bs'
 import { BiPoll } from 'react-icons/bi'
 import { MdGif } from 'react-icons/md'
+import TweetInteractions from './components/TweetInteractions'
 
 export default function Home() {
   return (
@@ -94,31 +94,12 @@ export default function Home() {
                   <span className="text-gray-500">{post.timestamp}</span>
                 </div>
                 <p className="text-white mt-2 whitespace-pre-line text-base">{post.content}</p>
-                <div className="flex justify-between mt-4 max-w-md">
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-400 transition-colors">
-                    <FaRegComment />
-                    <span>{post.replies}</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-green-400 transition-colors">
-                    <FaRetweet />
-                    <span>{post.retweets}</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-pink-400 transition-colors">
-                    <FaRegHeart />
-                    <span>{post.likes}</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-400 transition-colors">
-                    <FaRegChartBar />
-                  </button>
-                  <div className="flex space-x-2">
-                    <button className="text-gray-500 hover:text-blue-400 transition-colors">
-                      <FaRegBookmark />
-                    </button>
-                    <button className="text-gray-500 hover:text-blue-400 transition-colors">
-                      <FaShare />
-                    </button>
-                  </div>
-                </div>
+                <TweetInteractions
+                  postId={post.id}
+                  initialLikes={post.likes}
+                  initialRetweets={post.retweets}
+                  initialReplies={post.replies}
+                />
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 # Twitter Clone (X Clone)
 
-![Twitter Clone Screenshot](https://firebasestorage.googleapis.com/v0/b/assistive-tools-prod.appspot.com/o/shared-assets%2Ftwitter-clone.png?alt=media&token=03f1c8d6-092e-4f29-921f-1448278427f3)
+![Twitter Clone Screenshot](/images/twitter-clone.png)
 
 ## About
 
@@ -17,12 +17,6 @@ Key aspects of this project include:
 This project serves as a showcase of full-stack development capabilities, focusing on creating a seamless and engaging user experience while maintaining code quality and following best practices.
 
 This project is a work-in-progress Twitter (now X) clone built using Next.js, aiming to replicate the look, feel, and core functionality of the X.com desktop experience.
-
-## Live Demo
-
-Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT_URL_HERE`
-
-*(Note: `http://localhost:3002/` is a local development address and is not accessible externally. Please replace `YOUR_DEPLOYMENT_URL_HERE` with the public URL after deploying your project to a hosting service like Vercel or Netlify.)*
 
 ## Features
 
@@ -106,6 +100,19 @@ Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT
 -   Improve image handling, resolving external image loading issues.
 -   Add more features (user profiles, following/followers, search, trending topics).
 -   Refine responsive design and layout for various screen sizes.
+
+## Live Demo
+
+Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT_URL_HERE`
+
+*(Note: `http://localhost:3002/` is a local development address and is not accessible externally. Please replace `YOUR_DEPLOYMENT_URL_HERE` with the public URL after deploying your project to a hosting service like Vercel or Netlify.)*
+
+## Contacts
+
+- **GitHub:** [Your GitHub Profile Link]
+- **LinkedIn:** [Your LinkedIn Profile Link]
+- **Twitter (X):** [Your Twitter/X Profile Link]
+- **Email:** [Your Email Address]
 
 ## License
 

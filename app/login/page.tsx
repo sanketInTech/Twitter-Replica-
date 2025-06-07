@@ -1,85 +1,100 @@
 'use client'
 
+import { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import Link from 'next/link'
 
-export default function Login() {
+export default function LoginPage() {
   const router = useRouter()
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsLoading(true)
+    setError('')
+
     const formData = new FormData(e.currentTarget)
-    
+    const email = formData.get('email') as string
+    const password = formData.get('password') as string
+
     try {
-      const res = await signIn('credentials', {
-        email: formData.get('email'),
-        password: formData.get('password'),
+      const result = await signIn('credentials', {
+        email,
+        password,
         redirect: false,
       })
 
-      if (res?.error) {
-        setError('Invalid credentials')
+      if (result?.error) {
+        setError('Invalid email or password')
         return
       }
 
       router.push('/')
       router.refresh()
-    } catch (error) {
-      setError('An error occurred')
+    } catch (_error) {
+      setError('Something went wrong')
+    } finally {
+      setIsLoading(false)
     }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="bg-gray-800 p-8 rounded-xl w-full max-w-md">
+      <div className="bg-gray-900 p-8 rounded-lg shadow-md w-96">
         <h1 className="text-2xl font-bold text-white mb-6">Sign in to Twitter</h1>
         
         {error && (
-          <div className="bg-red-500 text-white p-3 rounded-lg mb-4">
+          <div className="bg-red-500/10 border border-red-500 text-red-500 px-4 py-2 rounded mb-4">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
               Email
             </label>
             <input
               type="email"
-              name="email"
               id="email"
+              name="email"
               required
-              className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
               Password
             </label>
             <input
               type="password"
-              name="password"
               id="password"
+              name="password"
               required
-              className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+            disabled={isLoading}
+            className="w-full bg-blue-500 text-white py-2 rounded-md font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Sign in
+            {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
 
-        <p className="mt-4 text-center text-sm text-gray-400">
-          Demo credentials: demo@example.com / password123
-        </p>
+        <div className="mt-4 text-center">
+          <p className="text-gray-400">
+            Dont have an account?{' '}
+            <Link href="/signup" className="text-blue-500 hover:underline">
+              Sign up
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   )

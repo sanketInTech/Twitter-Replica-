@@ -1,8 +1,10 @@
-import NextAuth from 'next-auth'
+import NextAuth, { AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
+import prisma from '@/lib/prismadb'
+import bcrypt from 'bcrypt'
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -26,10 +28,6 @@ const handler = NextAuth({
 
         return null
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || 'GOOGLE_CLIENT_ID',
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'GOOGLE_CLIENT_SECRET',
     })
   ],
   pages: {
@@ -38,6 +36,8 @@ const handler = NextAuth({
   session: {
     strategy: 'jwt',
   },
-})
+}
+
+const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST } 

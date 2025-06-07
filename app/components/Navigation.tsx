@@ -1,8 +1,13 @@
+'use client'
+
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import { FaHome, FaUser, FaBell, FaEnvelope, FaBookmark, FaList, FaHashtag, FaEllipsisH } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 
 const Navigation = () => {
+  const { data: session } = useSession()
+  
   const menuItems = [
     { icon: FaHome, label: 'Home', href: '/' },
     { icon: FaHashtag, label: 'Explore', href: '/explore' },
@@ -15,7 +20,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="h-screen flex flex-col justify-between p-4">
+    <nav className="flex flex-col justify-between p-4">
       {/* Fixed Header */}
       <div>
         <div className="flex items-center space-x-2 mb-8">
@@ -44,16 +49,18 @@ const Navigation = () => {
       </div>
 
       {/* Profile Section - Fixed at bottom */}
-      <div className="mt-auto -mt-2">
-        <div className="flex items-center space-x-4 p-3 hover:bg-gray-800 rounded-full cursor-pointer">
-          <div className="w-10 h-10 rounded-full bg-gray-700"></div>
-          <div className="flex-1">
-            <div className="font-bold text-white">Sanket_01</div>
-            <div className="text-gray-400">@sanketdesai</div>
+      {session?.user && (
+        <div className="mt-auto -mt-2">
+          <div className="flex items-center space-x-4 p-3 hover:bg-gray-800 rounded-full cursor-pointer">
+            <div className="w-10 h-10 rounded-full bg-gray-700"></div>
+            <div className="flex-1">
+              <div className="font-bold text-white">{session.user.name}</div>
+              <div className="text-gray-400">@{session.user.email?.split('@')[0]}</div>
+            </div>
+            <FaEllipsisH className="w-5 h-5 text-white" />
           </div>
-          <FaEllipsisH className="w-5 h-5 text-white" />
         </div>
-      </div>
+      )}
     </nav>
   )
 }
