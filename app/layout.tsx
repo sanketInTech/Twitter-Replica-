@@ -1,6 +1,6 @@
 import './globals.css'
 import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/next-auth-options'
+import { authOptions } from './api/auth/[...nextauth]/next-auth-options'
 import Providers from './providers'
 import Navigation from './components/Navigation'
 import RightSidebar from './components/RightSidebar'
