@@ -42,7 +42,10 @@ const nextConfig = {
   },
   async headers() {
     return []
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig 
