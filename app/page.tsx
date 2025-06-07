@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
                 <p className="text-white mt-2 whitespace-pre-line text-base">{post.content}</p>
                 <TweetInteractions
-                  postId={post.id}
+                  _postId={post.id}
                   initialLikes={post.likes}
                   initialRetweets={post.retweets}
                   initialReplies={post.replies}

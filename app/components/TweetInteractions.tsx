@@ -5,14 +5,14 @@ import { FaRegChartBar } from 'react-icons/fa'
 import { FaRegBookmark, FaShare } from 'react-icons/fa'
 
 interface TweetInteractionsProps {
-  postId: string
+  _postId: string
   initialLikes: string
   initialRetweets: string
   initialReplies: string
 }
 
 export default function TweetInteractions({
-  postId,
+  _postId,
   initialLikes,
   initialRetweets,
   initialReplies,
