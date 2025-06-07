@@ -1,6 +1,6 @@
 # Twitter Clone (X Clone)
 
-![Twitter Clone](public/images/twitter-clone.png)
+![Twitter Clone](public/images/twitter-clone.png.png)
 
 ## About
 
