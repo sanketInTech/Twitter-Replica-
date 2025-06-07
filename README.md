@@ -1,6 +1,6 @@
 # Twitter Clone (X Clone)
 
-![Twitter Clone Screenshot](/images/twitter-clone.png)
+![Twitter Clone](public/images/twitter-clone.png)
 
 ## About
 
@@ -109,11 +109,10 @@ Once deployed, a live demo of the project will be available at: `YOUR_DEPLOYMENT
 
 ## Contacts
 
-- **GitHub:** [Your GitHub Profile Link]
-- **LinkedIn:** [Your LinkedIn Profile Link]
-- **Twitter (X):** [Your Twitter/X Profile Link]
-- **Email:** [Your Email Address]
+- **GitHub:** https://github.com/sanketInTech
+- **LinkedIn:** https://www.linkedin.com/in/sanket-desai-/
+- **Twitter (X):** https://x.com/IAmSanket_21
+- **Email:** sanketdesai1971@gmail.com
 
 ## License
 
-[Specify your license here, e.g., MIT]
