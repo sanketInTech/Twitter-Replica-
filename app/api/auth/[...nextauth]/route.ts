@@ -1,6 +1,6 @@
 import NextAuth, { AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { authOptions } from './auth'
+import { authOptions } from './next-auth-options'
 
 // const authOptions: AuthOptions = {
 //   providers: [
