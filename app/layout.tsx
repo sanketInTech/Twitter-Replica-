@@ -1,12 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import Providers from './providers'
 import Navigation from './components/Navigation'
 import RightSidebar from './components/RightSidebar'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Twitter Clone',
@@ -22,7 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
+      <body className="bg-black text-white">
         <Providers>
           {/* Fixed Left Empty Space - 10% */}
           <div className="fixed h-screen w-[10vw] left-0 top-0"></div>
